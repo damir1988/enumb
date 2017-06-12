@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enumb - Simple jQuery plugin</title>
+</head>
+<body>
+<input type="text" min="1" max="10" value="1" step="1" class="input_number">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/enumb.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $('.input_number').enumb({
+            onMinExceed: function (elem, currentValue, minVal, maxVal) {
+                console.log('Min exceed', elem, currentValue, minVal, maxVal);
+            },
+            onMaxExceed: function (elem, currentValue, minVal, maxVal) {
+                console.log('Max exceed', elem, currentValue, minVal, maxVal);
+            },
+            onChanged: function (elem, currentValue, minVal, maxVal) {
+                console.log('number changed', elem, currentValue, minVal, maxVal);
+            }
+        });
+        
+    });
+</script>
+</body>
+</html>
