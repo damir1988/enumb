@@ -13,4 +13,22 @@
 ```javascript
 $('.input_number').enumb();
 ```
+
+# callbacks
+```javascript
+$('.input_number').enumb({
+    onMinExceed: function (elem, currentValue, minVal, maxVal) {
+        // When current value is smaller than min attr
+        console.log('Min exceed', elem, currentValue, minVal, maxVal);
+    },
+    onMaxExceed: function (elem, currentValue, minVal, maxVal) {
+        // When current value is larger than max attr
+        console.log('Max exceed', elem, currentValue, minVal, maxVal);
+    },
+    onChanged: function (elem, currentValue, minVal, maxVal) {
+        // Value changed - do something
+        console.log('number changed', elem, currentValue, minVal, maxVal);
+    }
+});
+```
  
