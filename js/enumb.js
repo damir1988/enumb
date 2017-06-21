@@ -43,7 +43,7 @@
             }else if(currentValue > maxVal){
                 backToOldValue($(this), true, minVal, maxVal);
             }
-            if (options.onChanged !== undefined) {
+            if (options !== undefined && options.onChanged !== undefined) {
                 options.onChanged($(this), currentValue, minVal, maxVal);
             }
 
@@ -63,11 +63,11 @@
             elementNumber.val(elementNumber.attr('data-old-value'));
             var currentValue = parseFloat(elementNumber.val());
             if(maxExceed != true){
-                if (options.onMinExceed !== undefined) {
+                if (options !== undefined && options.onMinExceed !== undefined) {
                     options.onMinExceed(elementNumber, currentValue, minVal, maxVal);
                 }
             }else{
-                if (options.onMaxExceed !== undefined) {
+                if (options !== undefined && options.onMaxExceed !== undefined) {
                     options.onMaxExceed(elementNumber, currentValue, minVal, maxVal);
                 }
             }
