@@ -34,7 +34,8 @@
 
 
         /* ON INPUT NUMBER CHANGE */
-        $inputNumber.change(function () {
+        $inputNumber.change(function (e) {
+            e.preventDefault();
             var minVal = parseFloat($(this).attr('min'));
             var maxVal = parseFloat($(this).attr('max'));
             var currentValue = parseFloat($(this).val());
@@ -78,7 +79,7 @@
         /* GENERATE INPUT NUMBER STRUCTURE */
         function generateStructure() {
             $inputNumber.wrap('<div class="number_wrap"></div>');
-            $inputNumber.parent().append('<button class="number_minus">-</button><button class="number_plus">+</button>');
+            $inputNumber.parent().append('<button class="number_minus" type="button">-</button><button class="number_plus" type="button">+</button>');
         }
 
 
